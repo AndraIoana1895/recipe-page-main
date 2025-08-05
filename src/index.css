@@ -27,6 +27,7 @@ html{
 }
 
 body{
+  height:100vh;
   background-color:var(--stone100);
   margin:0;
   display:flex;
