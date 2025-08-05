@@ -1,13 +1,193 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+
+html{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,*::after,*::before{
+  box-sizing: inherit;
+}
+:root{
+  --white:hsl(0, 0%, 100%);
+  --stone100:hsl(30, 54%, 90%);
+  --stone150:hsl(30, 18%, 87%);
+  --stone600:hsl(30, 10%, 34%);
+  --stone900:hsl(24, 5%, 18%);
+  --brown800:hsl(14, 45%, 36%);
+  --rose800:hsl(332, 51%, 32%);
+  --rose50:hsl(330, 100%, 98%);
+  --font-size:16px;
+  --young-serif:"Young Serif", serif;
+  --young-serif-weight:400;
+  --outfit:"Outfit", sans-serif;
+  --outfit-weight400:400;
+  --outfit-weight600:600;
+  --outfit-weight700:700;
+}
+
+body{
+  background-color:var(--stone100);
+  margin:0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+hr{
+  border-top: 1px solid var(--stone400);
+}
+table hr{
+  width:100%;
+}
+
+@layer card{
+.card-wrapper{
+  background-color: var(--white);
+  width:540px;
+  height:1100px;
+  display:flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding:1.5rem;
+  border-radius:20px;
+}
+img{
+  border-radius:10px;
+}
+h1{
+  font-family: var(--young-serif);
+  font-weight: var(--young-serif-weight);
+  font-size:22px;
+  color:var(--stone900);
+}
+aside{
+  font-size:10px;
+  font-family: var(--outfit);
+  color:var(--stone600);
+  margin-bottom:1rem;
+}
+.card{
+  width:100%;
+  background-color: var(--rose50);
+  border-radius:10px;
+  padding:1rem;
+}
+.card h3{
+  margin:0;
+  font-size:14px;
+  color:var(--rose800);
+  font-family: var(--outfit);
+  font-weight: var(--outfit-weight600);
+}
+.card ul{
+  margin: 10px 1.2rem 0px;
+  padding:0;
+  display:flex;
+  flex-direction: column;
+  gap:5px;
+  
+}
+.card ul li span{
+  color:var(--stone600);
+  font-family: var(--outfit);
+  font-size:12px;
+  font-weight: var(--outfit-weight600);
+}
+.card ul li{
+  color:var(--stone600);
+  font-size: 12px;
+  font-family: var(--outfit);
+  font-weight:var(--outfit-weight400);
+  padding-inline-start:0.5rem;
+}
+.card ul li::marker{
+  color:var(--rose800);
+}
+}
+@layer ingredients{
+  .ingredients{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    margin-bottom: 1rem;
+  }
+  .ingredients ul{
+    margin:0 0 0 1.3rem;
+    padding:0;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+  }
+  .ingredients ul li{
+    padding-inline-start:0.5rem;
+    font-size:12px;
+    font-family: var(--outfit);
+    color:var(--stone600);
+  }
+  .ingredients ul li::marker{
+    color:var(--brown800);
+  }
+}
+@layer instructions{
+.instructions{
+  width:100%;
+  margin-bottom:1rem;
+}
+.instructions ol{
+  display:flex;
+  flex-direction: column;
+  margin:0 0 0 1.3rem;
+  padding:0;
+  font-size:12px;
+  gap:5px;
+}
+.instructions ol li{
+  padding-inline-start:0.5rem;
+  font-size:12px;
+  font-family: var(--outfit);
+  color:var(--stone600);
+}
+.instructions ol li span{
+  font-weight: var(--outfit-weight700);
+}
+.instructions ol li::marker{
+  color:var(--brown800);
+  font-weight: var(--outfit-weight700);
+}
+}
+@layer nutrition{
+  .nutrition{
+    width:100%;
+  }
+  .nutrition p{
+    font-size: 12px;
+    font-family: var(--outfit);
+    color:var(--stone600)
+  }
+  .nutrition table{
+    width:100%;
+    margin-left:1rem;
+    font-size:12px;
+    font-family: var(--outfit);
+    color:var(--stone600);
+  }
+  .nutrition table tr td:last-child{
+    color:var(--brown800);
+    font-weight: var(--outfit-weight600);
+  }
+}
+
+@media (max-width: 540px) {
+  .card-wrapper{
+    width:100vw;
+    height:auto;
+    border-radius:0;
+    padding:1rem;
+  }
+  .card-wrapper img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    border-radius:0;
+  }
 }
