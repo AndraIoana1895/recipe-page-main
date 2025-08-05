@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="card-wrapper">
       <img src={omeletteImg} alt="Omelette" />
-
       <h1>Simple Omelette Recipe</h1>
 
       <aside>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
@@ -13,7 +12,7 @@ function App() {
 
       <main>
         <div className="card">
-          <h3>Preparation time</h3>
+          <h2>Preparation time</h2>
           <ul>
             <li><span>Total:</span> Approximately 10 minutes</li>
             <li><span>Preparation:</span> 5 minutes</li>
